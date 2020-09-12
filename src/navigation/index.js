@@ -6,8 +6,7 @@ import { Button, TextInput } from 'react-native-paper';
 
 import { useAuth } from '../AuthContext';
 import { Home, Login } from '../screens';
-
-// import { SpotifyTransition } from './SpotifyTransition';
+import { SpotifyTransition } from "./SpotifyTransition";
 
 const AuthStack = createStackNavigator();
 const AppStack = createStackNavigator();
@@ -61,7 +60,14 @@ const SignOutButton = () => {
 export const RootNavigator = () => {
     const { status } = useAuth();
     return (
-        <RootStack.Navigator headerMode="none">
+        <RootStack.Navigator 
+            headerMode="none"
+            screenOptions={{
+                cardOverlayEnabled: true,
+                gestureEnabled: true,
+                ...SpotifyTransition
+            }}
+        >
             {status === "signOut" ? (
                 <RootStack.Screen name="Auth" component={AuthNavigator} />
             ) : (
