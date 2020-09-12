@@ -14,8 +14,8 @@ const AnimationSpec = {
 
 export const SpotifyTransition = {
     transitionSpec: {
-        open: AnimationSpec,
-        close: AnimationSpec,
+        open: TransitionSpecs.TransitionIOSSpec,
+        close: TransitionSpecs.TransitionIOSSpec,
     },
     cardStyleInterpolator: ({ current, next }) => {
         return {
