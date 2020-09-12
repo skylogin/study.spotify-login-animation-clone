@@ -20,6 +20,15 @@ export const SpotifyTransition = {
     cardStyleInterpolator: ({ current, next }) => {
         return {
             cardStyle: {
+                opacity: next
+                    ? next.progress.interpolate({
+                        inputRange: [0, 0.5, 1],
+                        outputRange: [1, 1, 0]
+                    })
+                    : current.progress.interpolate({
+                        inputRange: [0, 0.5, 1],
+                        outputRange: [0, 0, 1]
+                    }),
                 transform: [
                     {
                         rotateY: next
@@ -33,6 +42,12 @@ export const SpotifyTransition = {
                             })
                     }
                 ]
+            },
+            overlayStyle: {
+                opacity: current.progress.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [0, 1],
+                })
             }
         };
     }
