@@ -2,7 +2,7 @@
 https://elazizi.com/spotify-login-animation-with-react-navigation-v-5<br/>
 https://github.com/yjose/spotify-login-animation-with-react-navigation-v5
 
-# Defendency
+# Dependency
 react-native-paper<br/>
 ```yarn add react-native-paper```
 
